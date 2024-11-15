@@ -44,6 +44,7 @@ class NewsViewModel @Inject constructor(
                     _viewState.value = NewsViewState.Error("Error fetching news")
                 }
             } catch (e: Exception) {
+                _viewState.value = NewsViewState.Error("Error fetching news")
                 Log.e(TAG, "Error fetching news: ${e.message}", e)
             }
 
