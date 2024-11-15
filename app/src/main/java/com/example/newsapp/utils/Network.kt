@@ -6,6 +6,8 @@ import android.net.NetworkCapabilities
 import android.os.Build
 
 class Network {
+
+    // TODO: need to add to check network availability 
      companion object {
          fun isNetworkAvailable(context: Context?): Boolean {
              if (context == null) return false

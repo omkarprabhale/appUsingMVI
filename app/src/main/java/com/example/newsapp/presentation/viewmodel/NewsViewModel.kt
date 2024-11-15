@@ -1,8 +1,6 @@
 package com.example.newsapp.presentation.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.newsapp.data.model.Articles
@@ -27,7 +25,6 @@ class NewsViewModel @Inject constructor(
     val TAG = this.javaClass.toString()
     private val _viewState = MutableStateFlow<NewsViewState>(NewsViewState.Loading)
     val viewState: StateFlow<NewsViewState> = _viewState.asStateFlow()
-
     fun onIntent(intent: NewsIntent) {
         when (intent) {
             is NewsIntent.FetchNews -> getNewsData()
@@ -44,7 +41,7 @@ class NewsViewModel @Inject constructor(
                     news.value = newsResponse.body()!!.articles
                     _viewState.value = NewsViewState.Success(news.value)
                 } else {
-                    Log.e(TAG, "Error got while fetching")
+                    _viewState.value = NewsViewState.Error("Error fetching news")
                 }
             } catch (e: Exception) {
                 Log.e(TAG, "Error fetching news: ${e.message}", e)
