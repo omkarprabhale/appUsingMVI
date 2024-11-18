@@ -1,7 +1,6 @@
-package com.example.newsapp.repository
+package com.example.newsapp.data.repository
 
-import com.example.newsapp.data.model.NewsResponse
-import com.example.newsapp.data.network.NewsInterface
+import com.example.newsapp.domain.model.NewsResponse
 import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton

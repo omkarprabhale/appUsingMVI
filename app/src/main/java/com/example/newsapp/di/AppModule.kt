@@ -1,7 +1,7 @@
 package com.example.newsapp.di
 
-import com.example.newsapp.data.network.BASE_URL
-import com.example.newsapp.data.network.NewsInterface
+import com.example.newsapp.data.repository.BASE_URL
+import com.example.newsapp.data.repository.NewsInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

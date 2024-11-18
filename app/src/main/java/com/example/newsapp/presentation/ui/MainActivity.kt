@@ -36,7 +36,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.newsapp.R
-import com.example.newsapp.data.model.Articles
+import com.example.newsapp.domain.model.Articles
 import com.example.newsapp.presentation.intent.NewsIntent
 import com.example.newsapp.presentation.viewmodel.NewsViewModel
 import com.example.newsapp.presentation.ui.theme.NewsAppTheme
@@ -108,8 +108,10 @@ class MainActivity : ComponentActivity() {
             }
 
             is NewsViewState.Error -> {
-                ShowErrorMessage("Error fetching news")
+                ShowErrorMessage("0 news found")
             }
+
+            is NewsViewState.EmptyList -> TODO()
         }
 
     }
